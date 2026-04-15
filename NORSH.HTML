@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norsh Company | Professional Plumbing, Biodigesters & Interior Design Nairobi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --norsh-navy: #1B365D;
+            --norsh-gold: #F2A900;
+            --norsh-green: #2E7D32;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .bg-norsh-navy { background-color: var(--norsh-navy); }
+        .text-norsh-navy { color: var(--norsh-navy); }
+        .bg-norsh-gold { background-color: var(--norsh-gold); }
+        .text-norsh-gold { color: var(--norsh-gold); }
+        .bg-norsh-green { background-color: var(--norsh-green); }
+        
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(27, 54, 93, 0.8), rgba(27, 54, 93, 0.8)), 
+                        url('https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Sticky Header -->
+    <header class="sticky-header bg-white">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-norsh-navy flex items-center justify-center rounded">
+                    <span class="text-white font-bold text-xl">N</span>
+                </div>
+                <span class="text-2xl font-bold text-norsh-navy tracking-tight">NORSH</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#services" class="hover:text-norsh-gold">Services</a>
+                <a href="#about" class="hover:text-norsh-gold">About</a>
+                <a href="#portfolio" class="hover:text-norsh-gold">Projects</a>
+                <a href="#contact" class="hover:text-norsh-gold">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="tel:+254715636605" class="hidden sm:block text-norsh-navy font-bold">
+                    <i class="fas fa-phone mr-1"></i> +254 715 636605
+                </a>
+                <a href="#quote" class="bg-norsh-gold text-norsh-navy px-4 py-2 rounded-full font-bold text-sm uppercase transition hover:opacity-90">
+                    Get Free Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 px-4">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="bg-norsh-gold text-norsh-navy px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">NCA Compliant Professional Services</span>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    Reliable Plumbing & Engineering for Nairobi Homes.
+                </h1>
+                <p class="text-lg opacity-90 leading-relaxed">
+                    Norsh Company delivers precision plumbing, odorless biodigester systems, and premium interior transformations across Nairobi. Quality guaranteed.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#services" class="bg-norsh-gold text-norsh-navy px-8 py-4 rounded font-bold text-center shadow-lg hover:scale-105 transition-transform">Our Services</a>
+                    <a href="tel:+254715636605" class="border-2 border-white px-8 py-4 rounded font-bold text-center hover:bg-white hover:text-norsh-navy transition">Call Our Experts</a>
+                </div>
+            </div>
+            
+            <!-- Quick Lead Form -->
+            <div id="quote" class="bg-white p-8 rounded-lg shadow-2xl text-gray-800">
+                <h3 class="text-2xl font-bold mb-4 text-norsh-navy">Request a Free Quote</h3>
+                <form class="space-y-4" onsubmit="handleForm(event)">
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Full Name</label>
+                        <input type="text" placeholder="Enter your name" class="w-full p-3 border border-gray-300 rounded focus:border-norsh-navy outline-none" required>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Phone Number</label>
+                            <input type="tel" placeholder="07XX..." class="w-full p-3 border border-gray-300 rounded focus:border-norsh-navy outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Location</label>
+                            <input type="text" placeholder="e.g. Westlands" class="w-full p-3 border border-gray-300 rounded focus:border-norsh-navy outline-none" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Service Needed</label>
+                        <select class="w-full p-3 border border-gray-300 rounded focus:border-norsh-navy outline-none">
+                            <option>Plumbing & Sanitary Works</option>
+                            <option>Biodigester Installation</option>
+                            <option>Interior Design & Renovation</option>
+                            <option>Electrical Works</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-norsh-navy text-white py-4 rounded font-bold text-lg hover:bg-opacity-90 transition shadow-md">
+                        Get My Free Quote
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-norsh-navy mb-4">Professional Solutions</h2>
+            <div class="w-20 h-1 bg-norsh-gold mx-auto"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Plumbing -->
+            <div class="service-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600 text-center">
+                <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-tools"></i></div>
+                <h3 class="text-xl font-bold mb-2 text-norsh-navy">Expert Plumbing</h3>
+                <p class="text-gray-600 text-sm mb-4">Nairobi's trusted choice for sanitary works, leak detection, and 24/7 emergency repairs.</p>
+                <ul class="text-left text-xs space-y-2 text-gray-500">
+                    <li><i class="fas fa-check text-blue-600 mr-2"></i>Sanitary Installations</li>
+                    <li><i class="fas fa-check text-blue-600 mr-2"></i>Full Drainage Systems</li>
+                </ul>
+            </div>
+
+            <!-- Biodigester -->
+            <div class="service-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-norsh-green text-center">
+                <div class="text-norsh-green text-4xl mb-4"><i class="fas fa-recycle"></i></div>
+                <h3 class="text-xl font-bold mb-2 text-norsh-navy">Biodigesters</h3>
+                <p class="text-gray-600 text-sm mb-4">Modern waste management. Say goodbye to exhaustion fees and septic odors forever.</p>
+                <ul class="text-left text-xs space-y-2 text-gray-500">
+                    <li><i class="fas fa-check text-norsh-green mr-2"></i>Residential Installs</li>
+                    <li><i class="fas fa-check text-norsh-green mr-2"></i>Zero-Odor Guarantee</li>
+                </ul>
+            </div>
+
+            <!-- Interior Design -->
+            <div class="service-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-norsh-gold text-center">
+                <div class="text-norsh-gold text-4xl mb-4"><i class="fas fa-paint-roller"></i></div>
+                <h3 class="text-xl font-bold mb-2 text-norsh-navy">Interior Design</h3>
+                <p class="text-gray-600 text-sm mb-4">From luxury kitchen cabinets to full office renovations. We bring your vision to life.</p>
+                <ul class="text-left text-xs space-y-2 text-gray-500">
+                    <li><i class="fas fa-check text-norsh-gold mr-2"></i>Custom Cabinetry</li>
+                    <li><i class="fas fa-check text-norsh-gold mr-2"></i>Space Optimization</li>
+                </ul>
+            </div>
+
+            <!-- Electrical -->
+            <div class="service-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-red-500 text-center">
+                <div class="text-red-500 text-4xl mb-4"><i class="fas fa-bolt-lightning"></i></div>
+                <h3 class="text-xl font-bold mb-2 text-norsh-navy">Electrical Works</h3>
+                <p class="text-gray-600 text-sm mb-4">Safe, professional wiring and safety audits for homes and commercial estates.</p>
+                <ul class="text-left text-xs space-y-2 text-gray-500">
+                    <li><i class="fas fa-check text-red-500 mr-2"></i>Standard Wiring</li>
+                    <li><i class="fas fa-check text-red-500 mr-2"></i>Safety Compliance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="bg-norsh-navy py-16 text-white">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 border border-norsh-gold">
+                    <i class="fas fa-headset text-norsh-gold text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">24/7 Response</h4>
+                <p class="text-sm opacity-80">Our emergency plumbing and electrical team is always on call for Nairobi residents.</p>
+            </div>
+            <div>
+                <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 border border-norsh-gold">
+                    <i class="fas fa-award text-norsh-gold text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">NCA Compliant</h4>
+                <p class="text-sm opacity-80">Full compliance with the National Construction Authority standards on all projects.</p>
+            </div>
+            <div>
+                <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 border border-norsh-gold">
+                    <i class="fas fa-city text-norsh-gold text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">Nairobi Experts</h4>
+                <p class="text-sm opacity-80">Deep knowledge of local estate infrastructure, from Karen to Syokimau.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-400 py-16 px-4">
+        <div class="container mx-auto grid md:grid-cols-3 gap-12">
+            <div>
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="w-8 h-8 bg-norsh-gold flex items-center justify-center rounded">
+                        <span class="text-norsh-navy font-bold text-lg">N</span>
+                    </div>
+                    <span class="text-xl font-bold text-white tracking-tight">NORSH</span>
+                </div>
+                <p class="text-sm leading-relaxed">Nairobi's premier partner for sustainable waste management, professional engineering, and bespoke interior renovations.</p>
+                <div class="flex space-x-4 mt-8">
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-norsh-gold hover:text-norsh-navy transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-norsh-gold hover:text-norsh-navy transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-norsh-gold hover:text-norsh-navy transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-lg mb-6">Our Services</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-norsh-gold">Biodigester Installation</a></li>
+                    <li><a href="#" class="hover:text-norsh-gold">Plumbing & Sanitary Works</a></li>
+                    <li><a href="#" class="hover:text-norsh-gold">Interior Design & Renovation</a></li>
+                    <li><a href="#" class="hover:text-norsh-gold">Electrical Maintenance</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-lg mb-6">Get In Touch</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start">
+                        <i class="fas fa-phone mt-1 mr-3 text-norsh-gold"></i>
+                        <span>+254 715 636605</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-envelope mt-1 mr-3 text-norsh-gold"></i>
+                        <span>info@norsh.co.ke</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-norsh-gold"></i>
+                        <span>Nairobi, Kenya</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto border-t border-gray-800 mt-16 pt-8 text-center text-xs tracking-widest uppercase">
+            &copy; 2026 Norsh Company Limited. Built for Nairobi Excellence.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/254715636605" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Simple Feedback Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-[2000] p-4">
+        <div class="bg-white p-8 rounded-lg max-w-sm w-full text-center shadow-2xl">
+            <div class="text-green-500 text-5xl mb-4"><i class="fas fa-check-circle"></i></div>
+            <h3 class="text-2xl font-bold mb-2 text-norsh-navy">Quote Requested!</h3>
+            <p class="text-gray-600 mb-6">Thank you for choosing Norsh. One of our engineers will call you back shortly at +254 715 636605.</p>
+            <button onclick="closeModal()" class="w-full bg-norsh-navy text-white px-6 py-3 rounded-full font-bold shadow-lg">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function handleForm(e) {
+            e.preventDefault();
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
